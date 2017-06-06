@@ -2,6 +2,17 @@
 	text-align: center;
 }
 body {
-	background: url("http://www.sandiegomagazine.com/Blogs/SD-Food-News/Summer-2015/Health-Food-Sucks/HealthFood.jpg") no-repeat center center fixed;
+	background: url("../images/bg.jpg") no-repeat center center fixed;
     background-size: cover;
+}
+.gifBlock {
+	display: inline-block;
+	padding: 10px;
+	background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(000, 000, 000, 0.4);
+}
+p {
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
 }

@@ -26,7 +26,7 @@ $(document).ready(function() {
 			$(".gifs").empty();
 			var word = $(this).html();
 			//console.log(this);
-			var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + word + "&api_key=dc6zaTOxFJmzC&trending&limit=10&rating=y&rating=g&rating=pg&rating=pg-13"
+			var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + word + "&api_key=dc6zaTOxFJmzC&trending&limit=10&rating=y&rating=g&rating=pg&rating=pg-13"
 			console.log(word);
 			$.ajax({
 		      	url: queryURL,

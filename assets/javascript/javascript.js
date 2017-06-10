@@ -15,13 +15,14 @@ $(document).ready(function() {
 		"Green Arrow"];
 
 	var newTopics = [];
-
+//Create a button for each topic in the array
 	function createButton(arr) {
 		for (var i = 0; i < arr.length; i++) {
 			var newButton = $("<button type='button'>").addClass("gifButton btn btn-danger");
 			newButton.append(arr[i]).appendTo(".buttonGroup");
 		}	
 		///////////////////////////////////////////////
+		//When user clicks on a topic button, grab 10 gifs from Giphy
 		$(".gifButton").on("click", function() {
 			$(".gifs").empty();
 			var word = $(this).html();
@@ -32,7 +33,7 @@ $(document).ready(function() {
 		      	url: queryURL,
 		      	method: "GET"
 		    }).done(function(response) {
-		    	for (var i = 0; i < response.data.length; i++) {
+		    	for (var i = 0; i < 10; i++) {
 		    		var gifDiv = $("<div>").addClass("gifBlock");
 		    		var rating = $("<p>").text("Rating: " + response.data[i].rating);
 		    		
@@ -46,6 +47,7 @@ $(document).ready(function() {
 
 		    	}
 		    	/////////////////////////////////////////////
+		    	//When user clicks on a gif, make it animate or stop
 		    	var moving = false;
     			$(".gifState").on("click", function() {
 					
@@ -67,17 +69,16 @@ $(document).ready(function() {
 		
 	}
 
-
+	//create the first topic buttons
 	createButton(topics);
 
 
-
+	//When user clicks on the "Add Item" button, create a button with whatever is typed in the input field
 	$("#newButton").on("click", function() {
 		var userInput = $("#userInput").val();
 		console.log(userInput);
 		if (topics.indexOf(userInput) === -1 && userInput.length > 0) {
 			newTopics.push(userInput);
-			topics.push(userInput);
 			createButton(newTopics);
 			newTopics = [];
 			//console.log(newTopics);
